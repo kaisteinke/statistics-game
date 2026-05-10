@@ -4,6 +4,7 @@
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
+\usepackage{hyperref}
 
 \begin{document}
 
@@ -39,6 +40,8 @@ statistics education, Python, Streamlit, correlation, distributions, outliers, d
 Statistics is easiest to understand when learners can connect formulas to visible patterns in data. In a programming-focused statistics course, this creates an opportunity to combine conceptual learning with practical Python development. StatQuest was designed around this idea: it is not a calculator that hides statistical reasoning, but a game that repeatedly asks the player to inspect a plot, make a decision, and compare that decision with a computed statistical result.
 
 The course syllabus emphasizes the relevance of statistics in computing careers, Python-based data analysis, correct interpretation of results, and clear communication for the audience. StatQuest addresses these goals through a lightweight application that can be used during a classroom demonstration or independently for practice. The project also fits the option of creating an application or game in Python, while still remaining closely connected to statistical content.
+
+The source code is available at \url{https://github.com/kaisteinke/statistics-game}.
 
 \section{Project Design}
 The application is structured as a five-round mini-game. At the start, the player selects a difficulty level: easy, medium, or hard. The difficulty changes the number of generated observations, using 30, 60, or 100 data points. Larger samples make some visual patterns more stable, but the hard setting also introduces more subtle statistical differences, especially in the correlation task.
