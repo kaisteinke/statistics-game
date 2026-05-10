@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StatQuest — Brand Identity (Light)</title>
+<link href="https://fonts.googleapis.com/css2?family=Limelight&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --coffee:  #14080e;
+    --grape:   #49475b;
+    --steel:   #799496;
+    --olive:   #acc196;
+    --custard: #e9eb9e;
+    --page-bg: #f5f4ee;
+    --card-bg: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--page-bg);
+    color: var(--coffee);
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .page { max-width: 960px; margin: 0 auto; padding: 60px 40px; }
+  .section { margin-bottom: 72px; }
+
+  .section-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--steel);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--olive), transparent);
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: var(--custard);
+    border: 1px solid var(--olive);
+    border-radius: 4px;
+    padding: 64px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 72px;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(172,193,150,0.35) 39px, rgba(172,193,150,0.35) 40px),
+      repeating-linear-gradient(0deg,  transparent, transparent 39px, rgba(172,193,150,0.35) 39px, rgba(172,193,150,0.35) 40px);
+  }
+
+  .hero-ornament {
+    font-family: 'Outfit', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--grape);
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .logo {
+    font-family: 'Limelight', cursive;
+    font-size: 80px;
+    color: var(--coffee);
+    line-height: 1;
+    position: relative;
+    letter-spacing: 0.02em;
+  }
+
+  .logo span { color: var(--grape); }
+
+  .logo-tagline {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--grape);
+    margin-top: 16px;
+    position: relative;
+  }
+
+  .deco-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 28px;
+    position: relative;
+  }
+  .deco-line::before, .deco-line::after {
+    content: '';
+    width: 80px;
+    height: 1px;
+    background: var(--olive);
+  }
+  .deco-diamond {
+    width: 6px; height: 6px;
+    background: var(--grape);
+    transform: rotate(45deg);
+  }
+
+  /* ── Logo Variants ── */
+  .logo-variants { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+  .logo-card {
+    padding: 36px 24px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid;
+  }
+
+  .logo-card.custard-bg  { background: var(--custard); border-color: var(--olive); }
+  .logo-card.white-bg    { background: #ffffff;         border-color: #d9d8d0; }
+  .logo-card.coffee-bg   { background: var(--coffee);   border-color: var(--grape); }
+
+  .logo-sm { font-family: 'Limelight', cursive; font-size: 32px; line-height: 1; }
+  .logo-card.custard-bg .logo-sm { color: var(--coffee); }
+  .logo-card.custard-bg .logo-sm span { color: var(--grape); }
+  .logo-card.white-bg .logo-sm   { color: var(--coffee); }
+  .logo-card.white-bg .logo-sm span { color: var(--grape); }
+  .logo-card.coffee-bg .logo-sm  { color: var(--custard); }
+  .logo-card.coffee-bg .logo-sm span { color: var(--olive); }
+
+  .logo-card-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; margin-top: 8px; }
+  .logo-card.custard-bg .logo-card-label,
+  .logo-card.white-bg .logo-card-label   { color: var(--steel); }
+  .logo-card.coffee-bg .logo-card-label  { color: var(--steel); }
+
+  /* ── Colour Palette ── */
+  .palette { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border-radius: 4px; overflow: hidden; border: 1px solid #d9d8d0; }
+
+  .swatch { padding: 32px 16px 20px; display: flex; flex-direction: column; justify-content: flex-end; }
+  .swatch:nth-child(1) { background: #14080e; }
+  .swatch:nth-child(2) { background: #49475b; }
+  .swatch:nth-child(3) { background: #799496; }
+  .swatch:nth-child(4) { background: #acc196; }
+  .swatch:nth-child(5) { background: #e9eb9e; }
+
+  .swatch-name { font-size: 11px; font-weight: 600; letter-spacing: 0.05em; margin-bottom: 4px; }
+  .swatch:nth-child(1) .swatch-name { color: #e9eb9e; }
+  .swatch:nth-child(2) .swatch-name { color: #e9eb9e; }
+  .swatch:nth-child(3) .swatch-name { color: #14080e; }
+  .swatch:nth-child(4) .swatch-name { color: #14080e; }
+  .swatch:nth-child(5) .swatch-name { color: #14080e; }
+
+  .swatch-hex { font-family: 'Outfit', monospace; font-size: 12px; font-weight: 400; }
+  .swatch:nth-child(1) .swatch-hex { color: #49475b; }
+  .swatch:nth-child(2) .swatch-hex { color: #799496; }
+  .swatch:nth-child(3) .swatch-hex { color: #49475b; }
+  .swatch:nth-child(4) .swatch-hex { color: #49475b; }
+  .swatch:nth-child(5) .swatch-hex { color: #799496; }
+
+  /* ── Colour Usage ── */
+  .usage-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 20px; }
+
+  .usage-card {
+    background: var(--card-bg);
+    border: 1px solid #d9d8d0;
+    border-radius: 4px;
+    padding: 20px;
+  }
+
+  .usage-card-title {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--steel);
+    margin-bottom: 10px;
+  }
+
+  .usage-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 4px 4px 0;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+  /* ── Typography ── */
+  .type-row {
+    background: var(--card-bg);
+    border: 1px solid #d9d8d0;
+    border-radius: 4px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .type-meta { display: flex; flex-direction: column; gap: 4px; }
+  .type-family { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--steel); }
+  .type-specs  { font-size: 11px; color: #b0afaa; font-weight: 400; }
+
+  .type-display { font-family: 'Limelight', cursive; font-size: 48px; color: var(--coffee); line-height: 1.1; }
+  .type-h1      { font-family: 'Limelight', cursive; font-size: 28px; color: var(--coffee); }
+  .type-h2      { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 500; color: var(--coffee); }
+  .type-body    { font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 400; color: var(--grape); line-height: 1.7; }
+  .type-caption { font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 300; letter-spacing: 0.06em; color: var(--steel); }
+  .type-label   { font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--steel); }
+
+  /* ── UI Components ── */
+  .components-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .comp-card {
+    background: var(--card-bg);
+    border: 1px solid #d9d8d0;
+    border-radius: 4px;
+    padding: 28px;
+  }
+
+  .comp-title {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--steel);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e8e7e2;
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    border-radius: 2px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    margin: 4px;
+  }
+
+  .btn-primary   { background: var(--coffee); color: var(--custard); }
+  .btn-secondary { background: var(--custard); color: var(--coffee); border: 1px solid var(--olive); }
+  .btn-ghost     { background: transparent; color: var(--grape); border: 1px solid #d9d8d0; }
+
+  /* Score badge */
+  .score-badge {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--custard);
+    border: 1px solid var(--olive);
+    border-radius: 4px;
+    padding: 12px 20px;
+    margin: 4px;
+  }
+  .score-num   { font-family: 'Limelight', cursive; font-size: 32px; color: var(--coffee); line-height: 1; }
+  .score-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; color: var(--steel); margin-top: 4px; }
+
+  /* Mode card */
+  .mode-card {
+    background: var(--page-bg);
+    border: 1px solid #d9d8d0;
+    border-left: 3px solid var(--olive);
+    border-radius: 2px;
+    padding: 14px 16px;
+    margin: 6px 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .mode-icon {
+    width: 36px; height: 36px;
+    background: var(--custard);
+    border: 1px solid var(--olive);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .mode-name   { font-family: 'Limelight', cursive; font-size: 14px; color: var(--coffee); line-height: 1.2; }
+  .mode-desc   { font-size: 11px; color: var(--steel); font-weight: 300; margin-top: 2px; }
+  .mode-points { margin-left: auto; font-family: 'Limelight', cursive; font-size: 18px; color: var(--grape); }
+
+  /* Slider */
+  .slider-demo { margin: 12px 0; }
+  .slider-track {
+    height: 4px;
+    background: #e0dfda;
+    border-radius: 2px;
+    position: relative;
+    margin: 20px 0 8px;
+  }
+  .slider-fill { height: 100%; width: 65%; background: var(--olive); border-radius: 2px; }
+  .slider-thumb {
+    width: 16px; height: 16px;
+    background: var(--coffee);
+    border-radius: 50%;
+    position: absolute;
+    top: -6px;
+    left: 63%;
+    border: 2px solid var(--olive);
+  }
+  .slider-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--steel); font-weight: 400; }
+  .slider-value  { text-align: center; font-family: 'Limelight', cursive; font-size: 28px; color: var(--coffee); margin-bottom: 4px; }
+  .slider-question { font-size: 12px; color: var(--steel); text-align: center; letter-spacing: 0.08em; }
+
+  /* Answer feedback */
+  .feedback {
+    background: #f3f5ec;
+    border: 1px solid var(--olive);
+    border-left: 3px solid var(--grape);
+    border-radius: 2px;
+    padding: 12px 16px;
+    margin-top: 12px;
+  }
+  .feedback-label { font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--grape); margin-bottom: 4px; }
+  .feedback-text  { font-size: 12px; color: var(--grape); font-weight: 400; line-height: 1.5; }
+
+  /* ── Footer ── */
+  .footer { text-align: center; padding: 40px 0 20px; border-top: 1px solid var(--olive); margin-top: 24px; }
+  .footer-logo { font-family: 'Limelight', cursive; font-size: 20px; color: var(--grape); }
+  .footer-sub  { font-size: 11px; color: var(--steel); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-ornament">Brand Identity System · 2025</div>
+    <div class="logo">Stat<span>Quest</span></div>
+    <div class="logo-tagline">How well do you really know your stats?</div>
+    <div class="deco-line">
+      <div class="deco-diamond"></div>
+      <div class="deco-diamond" style="opacity:.35;transform:rotate(45deg) scale(0.6)"></div>
+      <div class="deco-diamond"></div>
+    </div>
+  </div>
+
+  <!-- Logo Variants -->
+  <div class="section">
+    <div class="section-label">Logo Variants</div>
+    <div class="logo-variants">
+      <div class="logo-card custard-bg">
+        <div class="logo-sm">Stat<span>Quest</span></div>
+        <div class="logo-card-label">On custard · primary</div>
+      </div>
+      <div class="logo-card white-bg">
+        <div class="logo-sm">Stat<span>Quest</span></div>
+        <div class="logo-card-label">On white · secondary</div>
+      </div>
+      <div class="logo-card coffee-bg">
+        <div class="logo-sm">Stat<span>Quest</span></div>
+        <div class="logo-card-label">On dark · reversed</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Colour Palette -->
+  <div class="section">
+    <div class="section-label">Colour Palette</div>
+    <div class="palette">
+      <div class="swatch"><div class="swatch-name">Coffee Bean</div><div class="swatch-hex">#14080e</div></div>
+      <div class="swatch"><div class="swatch-name">Vintage Grape</div><div class="swatch-hex">#49475b</div></div>
+      <div class="swatch"><div class="swatch-name">Cool Steel</div><div class="swatch-hex">#799496</div></div>
+      <div class="swatch"><div class="swatch-name">Muted Olive</div><div class="swatch-hex">#acc196</div></div>
+      <div class="swatch"><div class="swatch-name">Vanilla Custard</div><div class="swatch-hex">#e9eb9e</div></div>
+    </div>
+
+    <div class="usage-grid">
+      <div class="usage-card">
+        <div class="usage-card-title">Backgrounds & Surfaces</div>
+        <span class="usage-tag" style="background:#f5f4ee;color:#49475b;border:1px solid #d9d8d0">
+          <span class="dot" style="background:#f5f4ee;border:1px solid #d9d8d0"></span>Off-white — page bg
+        </span>
+        <span class="usage-tag" style="background:#e9eb9e;color:#14080e;border:1px solid #acc196">
+          <span class="dot" style="background:#e9eb9e;border:1px solid #acc196"></span>Vanilla Custard — hero, cards
+        </span>
+        <span class="usage-tag" style="background:#fff;color:#49475b;border:1px solid #d9d8d0">
+          <span class="dot" style="background:#fff;border:1px solid #d9d8d0"></span>White — content cards
+        </span>
+      </div>
+      <div class="usage-card">
+        <div class="usage-card-title">Accent & Type</div>
+        <span class="usage-tag" style="background:#f5f4ee;color:#14080e;border:1px solid #d9d8d0">
+          <span class="dot" style="background:#14080e"></span>Coffee Bean — primary text, CTA
+        </span>
+        <span class="usage-tag" style="background:#f5f4ee;color:#49475b;border:1px solid #d9d8d0">
+          <span class="dot" style="background:#49475b"></span>Vintage Grape — body text
+        </span>
+        <span class="usage-tag" style="background:#f5f4ee;color:#799496;border:1px solid #d9d8d0">
+          <span class="dot" style="background:#acc196;border:1px solid #acc196"></span>Muted Olive — highlights, borders
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Typography -->
+  <div class="section">
+    <div class="section-label">Typography</div>
+
+    <div class="type-row">
+      <div class="type-meta"><span class="type-family">Limelight</span><span class="type-specs">Display · 48px</span><span class="type-specs">Titles, logo</span></div>
+      <div class="type-display">StatQuest</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><span class="type-family">Limelight</span><span class="type-specs">Heading 1 · 28px</span><span class="type-specs">Section titles</span></div>
+      <div class="type-h1">Guess the Correlation</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><span class="type-family">Outfit 500</span><span class="type-specs">Heading 2 · 22px</span><span class="type-specs">Subtitles, labels</span></div>
+      <div class="type-h2">Round 3 of 5</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><span class="type-family">Outfit 400</span><span class="type-specs">Body · 15px</span><span class="type-specs">Descriptions</span></div>
+      <div class="type-body">A correlation coefficient above 0.7 is generally considered strong in social science research — your guess was impressively close.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><span class="type-family">Outfit 300</span><span class="type-specs">Caption · 12px</span><span class="type-specs">Metadata, hints</span></div>
+      <div class="type-caption">Difficulty · Medium &nbsp;·&nbsp; Dataset: 50 observations &nbsp;·&nbsp; Generated using NumPy</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><span class="type-family">Outfit 600</span><span class="type-specs">Label · 11px / caps</span><span class="type-specs">Section tags</span></div>
+      <div class="type-label">Current Score &nbsp;·&nbsp; Mode Select &nbsp;·&nbsp; Round Progress</div>
+    </div>
+  </div>
+
+  <!-- UI Components -->
+  <div class="section">
+    <div class="section-label">UI Components</div>
+    <div class="components-grid">
+
+      <div class="comp-card">
+        <div class="comp-title">Buttons</div>
+        <button class="btn btn-primary">Start Game</button>
+        <button class="btn btn-secondary">Try Again</button>
+        <button class="btn btn-ghost">Leaderboard</button>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-title">Score Display</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <div class="score-badge">
+            <div class="score-num">840</div>
+            <div class="score-label">Score</div>
+          </div>
+          <div class="score-badge" style="border-color:var(--grape)">
+            <div class="score-num" style="color:var(--grape)">4/5</div>
+            <div class="score-label">Correct</div>
+          </div>
+          <div class="score-badge">
+            <div class="score-num" style="color:var(--steel);font-size:22px">+120</div>
+            <div class="score-label">Last Round</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-title">Game Mode Cards</div>
+        <div class="mode-card">
+          <div class="mode-icon">🎯</div>
+          <div>
+            <div class="mode-name">Guess the Correlation</div>
+            <div class="mode-desc">Estimate r from a scatter plot</div>
+          </div>
+          <div class="mode-points">300pts</div>
+        </div>
+        <div class="mode-card" style="border-left-color:var(--steel)">
+          <div class="mode-icon">📊</div>
+          <div>
+            <div class="mode-name">Name That Distribution</div>
+            <div class="mode-desc">Identify the histogram shape</div>
+          </div>
+          <div class="mode-points" style="color:var(--steel)">200pts</div>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-title">Correlation Slider</div>
+        <div class="slider-question">Your guess</div>
+        <div class="slider-value">+0.65</div>
+        <div class="slider-demo">
+          <div class="slider-track">
+            <div class="slider-fill"></div>
+            <div class="slider-thumb"></div>
+          </div>
+          <div class="slider-labels"><span>−1.0</span><span>0</span><span>+1.0</span></div>
+        </div>
+        <div class="feedback">
+          <div class="feedback-label">✓ Nice — actual r = 0.71</div>
+          <div class="feedback-text">Correlations between 0.7–0.9 are strong positive. Your estimate was only 0.06 off — top 15% of players.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-logo">StatQuest</div>
+    <div class="footer-sub">University Statistics · Python Final Project · 2025</div>
+  </div>
+
+</div>
+</body>
+</html>

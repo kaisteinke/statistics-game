@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Outfit:wght@300;400;500;600&display=swap');
+
+/* ═══════════════════════════════════════════
+   CHROME — hide Streamlit header/toolbar
+═══════════════════════════════════════════ */
+
+header[data-testid="stHeader"],
+[data-testid="stDecoration"],
+[data-testid="stStatusWidget"] {
+    display: none !important;
+}
+
+/* ═══════════════════════════════════════════
+   PAGE BACKGROUND
+═══════════════════════════════════════════ */
+
+.stApp,
+[data-testid="stAppViewContainer"],
+[data-testid="stMain"] {
+    background: #f5f4ee !important;
+}
+
+/* Hide sidebar (manual routing) */
+section[data-testid="stSidebar"],
+[data-testid="stSidebar"] {
+    display: none !important;
+}
+
+/* Main content block */
+.block-container {
+    padding-top: 2.5rem !important;
+    padding-bottom: 4rem !important;
+    max-width: 860px !important;
+}
+
+/* ═══════════════════════════════════════════
+   TYPOGRAPHY
+═══════════════════════════════════════════ */
+
+html, body {
+    font-family: 'Outfit', sans-serif !important;
+    color: #49475b !important;
+}
+
+.stMarkdown p,
+.stMarkdown li {
+    font-family: 'Outfit', sans-serif !important;
+    color: #49475b;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Limelight', cursive !important;
+    color: #14080e !important;
+    letter-spacing: 0.02em;
+}
+
+/* ═══════════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════════ */
+
+.stButton > button {
+    background: #14080e !important;
+    color: #e9eb9e !important;
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    border: none !important;
+    border-radius: 2px !important;
+    padding: 12px 32px !important;
+    width: auto !important;
+    min-width: 120px !important;
+    white-space: nowrap !important;
+    transition: background 0.15s ease !important;
+    cursor: pointer !important;
+    box-shadow: none !important;
+}
+
+.stButton > button:hover,
+.stButton > button:focus {
+    background: #49475b !important;
+    color: #e9eb9e !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.stButton > button:active {
+    background: #49475b !important;
+}
+
+.stButton > button:disabled {
+    background: #c8c7c0 !important;
+    color: #799496 !important;
+    cursor: not-allowed !important;
+}
+
+/* Buttons inside columns act as card footers — full width, no top radius */
+[data-testid="stColumn"] .stButton > button {
+    width: 100% !important;
+    min-width: 0 !important;
+    border-radius: 0 0 4px 4px !important;
+}
+
+/* Collapse gap so card + button touch */
+[data-testid="stColumn"] [data-testid="stVerticalBlock"] {
+    gap: 0 !important;
+}
+
+/* ═══════════════════════════════════════════
+   CARD CLASSES (sq-diff-card, sq-mode-card)
+   Card bottom flush-connects to button footer
+═══════════════════════════════════════════ */
+
+.sq-diff-card,
+.sq-mode-card {
+    border-bottom: none !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.sq-difficulty-icon {
+    width: 52px;
+    height: 52px;
+    background: #e9eb9e;
+    border: 1px solid #acc196;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+}
+
+.sq-learning-callout {
+    background: #ffffff;
+    border: 1px solid #acc196;
+    border-left: 4px solid #49475b;
+    border-radius: 4px;
+    padding: 18px 20px 20px;
+    margin: 14px 0 2px;
+}
+
+.sq-learning-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #49475b;
+    margin-bottom: 8px;
+}
+
+.sq-learning-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.55;
+    letter-spacing: 0;
+    color: #14080e;
+}
+
+.sq-learning-detail {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.55;
+    letter-spacing: 0;
+    color: #49475b;
+    font-style: italic;
+    margin-top: 8px;
+}
+
+/* ═══════════════════════════════════════════
+   SLIDER  (primary colour comes from config.toml)
+═══════════════════════════════════════════ */
+
+[data-testid="stSlider"] label,
+[data-testid="stSlider"] p {
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 500 !important;
+    color: #49475b !important;
+    font-size: 13px !important;
+}
+
+/* Thumb */
+[data-testid="stSlider"] [role="slider"] {
+    background: #14080e !important;
+    border: 2px solid #acc196 !important;
+    box-shadow: none !important;
+}
+
+/* ═══════════════════════════════════════════
+   TEXT INPUT
+═══════════════════════════════════════════ */
+
+.stTextInput > div > div > input {
+    font-family: 'Outfit', sans-serif !important;
+    border: 1px solid #acc196 !important;
+    border-radius: 2px !important;
+    color: #14080e !important;
+    background: #ffffff !important;
+}
+
+.stTextInput > div > div > input:focus {
+    border-color: #49475b !important;
+    box-shadow: 0 0 0 1px #49475b !important;
+}
+
+.stTextInput label {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 12px !important;
+    color: #799496 !important;
+}
+
+/* ═══════════════════════════════════════════
+   PLOTLY CHARTS
+═══════════════════════════════════════════ */
+
+[data-testid="stPlotlyChart"],
+[data-testid="stPlotlyChart"] > div,
+[data-testid="stPlotlyChart"] > div > div {
+    background: transparent !important;
+}
+
+/* Hide Plotly modebar (zoom/pan/select toolbar) on all charts */
+.modebar-container,
+.modebar,
+.js-plotly-plot .plotly .modebar {
+    display: none !important;
+}
+
+/* ═══════════════════════════════════════════
+   MISC
+═══════════════════════════════════════════ */
+
+hr {
+    border: none !important;
+    border-top: 1px solid #acc196 !important;
+    margin: 1.5rem 0 !important;
+}
+
+/* Remove default focus ring on all interactive elements */
+button:focus, button:focus-visible,
+input:focus, input:focus-visible {
+    outline: none !important;
+}
+
+[data-testid="stMetric"] label {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 11px !important;
+    letter-spacing: 0.15em !important;
+    text-transform: uppercase !important;
+    color: #799496 !important;
+}
+
+[data-testid="stMetric"] [data-testid="stMetricValue"] {
+    font-family: 'Limelight', cursive !important;
+    color: #14080e !important;
+}

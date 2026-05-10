@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+  <path d="M7 2h4l1 5-3 3-3-3z" fill="#799496" />
+  <path d="M13 2h4l3 5-3 3-3-3z" fill="#49475b" />
+  <circle cx="12" cy="15" r="6.5" fill="#b06f49" stroke="#14080e" stroke-width="1" />
+  <text x="12" y="17.4" text-anchor="middle" font-family="Outfit, Arial, sans-serif" font-size="7.8" font-weight="700" fill="#14080e">3</text>
+</svg>
